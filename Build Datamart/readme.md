@@ -137,3 +137,25 @@ Note : Need install module
 Running job again
 ![alt text](image-43.png)
 ![alt text](image-44.png)
+
+## PREPARE STAGING 
+- ### Create database stg_datamart in hive
+![alt text](image-45.png)
+- ### Create table staging in hive 
+![alt text](image-46.png)
+```
+CREATE EXTERNAL TABLE IF NOT EXISTS stg_datamart.stg_trx_summary (
+    trx_id BIGINT,
+    trx_date DATE,
+    account_number STRING,
+    amount DECIMAL(15,2),
+    channel_type STRING,        
+    channel_id STRING,
+    merchant_location STRING,
+    created_at TIMESTAMP
+)
+PARTITIONED BY (trx_date_partition DATE)
+STORED AS PARQUET
+LOCATION '/warehouse/tablespace/external/hive/stg_datamart.db/stg_datamart.stg_datamart.stg_trx_summary';
+```
+- ### Create table staging in hive 
