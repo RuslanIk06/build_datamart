@@ -159,3 +159,6 @@ STORED AS PARQUET
 LOCATION '/warehouse/tablespace/external/hive/stg_datamart.db/stg_datamart.stg_datamart.stg_trx_summary';
 ```
 - ### Create table staging in hive 
+- ### Create table staging in hive 
+- ### Create table staging in hive 
+![alt text](image-47.png)
